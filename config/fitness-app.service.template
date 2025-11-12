@@ -1,0 +1,16 @@
+[Unit]
+Description=uWSGI service for Fitness App
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/fitness-app
+Environment="PATH=/home/ubuntu/fitness-app/venv/bin"
+ExecStart=/home/ubuntu/fitness-app/venv/bin/uwsgi --ini /home/ubuntu/fitness-app/config/uwsgi.ini
+Restart=always
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target
+

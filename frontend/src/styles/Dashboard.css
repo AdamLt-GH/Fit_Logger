@@ -1,0 +1,145 @@
+/* ----- ROOT LAYOUT (neon / tron theme) ----- */
+.dashboard-root{
+  min-height: 100dvh;
+  padding: 34px 18px 56px;
+  background:
+    radial-gradient(1200px 800px at 80% -10%, rgba(155,92,255,.12), transparent 60%),
+    radial-gradient(1000px 700px at -10% 110%, rgba(0,194,255,.10), transparent 60%),
+    var(--bg);
+  color: var(--text);
+}
+
+.dashboard-root .container{
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+}
+
+/* ----- TOP BAR (glassy neon strip) ----- */
+.dashboard-topbar{
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+  border-radius: 14px;
+  background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 35%, #0b0e15), #0b0e15);
+  box-shadow: var(--shadow-soft);
+}
+.dashboard-topbar .navbar-brand{ color: var(--text); }
+.dashboard-topbar .nav-link{ color: color-mix(in oklab, var(--text) 80%, #bcd); }
+.dashboard-topbar .nav-link:hover{ color: var(--text); background: rgba(255,255,255,0.06); border-radius: 10px; }
+.dashboard-topbar .nav-link.active{ background: rgba(255,255,255,0.12) !important; color: var(--text) !important; }
+
+/* ----- CARDS / PANELS ----- */
+.dashboard-card,
+.dashboard-root .card{
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: var(--radius) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)) !important;
+  box-shadow: var(--shadow-soft) !important;
+  color: var(--text);
+}
+.dashboard-root .card-header{
+  border-bottom: 1px solid var(--edge);
+  background: transparent;
+  color: var(--text);
+}
+.dashboard-root .card-title{ color: var(--text); }
+
+/* ----- TEXT / MUTED ----- */
+.dashboard-root .text-muted{ color: var(--muted) !important; }
+
+/* ----- BADGES (challenge type chips) ----- */
+.challenge-type-badge{
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  border: 1px solid var(--edge);
+}
+.chip-habit{
+  background: color-mix(in oklab, var(--accent) 18%, transparent);
+  border-color: color-mix(in oklab, var(--accent) 30%, var(--edge));
+}
+.chip-target{
+  background: color-mix(in oklab, var(--accent-2) 18%, transparent);
+  border-color: color-mix(in oklab, var(--accent-2) 30%, var(--edge));
+}
+
+/* ----- CHALLENGE CARD ----- */
+.challenge-card{ transition: transform .2s ease, box-shadow .2s ease; cursor: pointer; }
+.challenge-card:hover{ transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+.challenge-icon{
+  width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #0c1018;
+  border: 1px solid var(--edge);
+}
+
+/* ----- INPUTS / SELECTS / TEXTAREA ----- */
+.dashboard-root .form-select,
+.dashboard-root .form-control,
+.dashboard-root textarea{
+  background: #0c1018 !important;
+  color: var(--text) !important;
+  border: 1px solid var(--edge) !important;
+  border-radius: 10px !important;
+}
+.dashboard-root .form-select:focus,
+.dashboard-root .form-control:focus,
+.dashboard-root textarea:focus{
+  border-color: color-mix(in oklab, var(--accent) 60%, var(--edge)) !important;
+  box-shadow: 0 0 0 2px rgba(0,194,255,.20) !important;
+}
+
+/* ----- BUTTONS ----- */
+.dashboard-root .btn{
+  --bcol: var(--accent);
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklab, var(--bcol) 35%, transparent);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--bcol) 20%, #0b0e15), #0b0e15);
+  color: var(--text);
+  font-weight: 700;
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+.dashboard-root .btn:hover{ transform: translateY(-1px); box-shadow: var(--glow); }
+.dashboard-root .btn:active{ transform: translateY(0); }
+.dashboard-root .btn-primary{
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+  border-color: color-mix(in oklab, var(--accent) 50%, transparent) !important;
+}
+.dashboard-root .btn-outline-secondary{ border-color: var(--edge) !important; color: var(--text); }
+.dashboard-root .btn-outline-danger{ border-color: #ff6c8f !important; color: #ff6c8f !important; }
+
+/* ----- WEATHER WIDGET ----- */
+.weather-widget,
+.dashboard-root .weather-widget{
+  background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 30%, #0b0e15), color-mix(in oklab, var(--accent-2) 28%, #0b0e15)) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--edge) !important;
+  border-radius: 14px !important;
+}
+.weather-widget .form-control{ background: rgba(255,255,255,.06) !important; color: var(--text) !important; border: 1px solid var(--edge) !important; }
+.weather-widget .form-control::placeholder{ color: #b6c3d9; }
+.weather-widget .btn{ background: rgba(255,255,255,.10) !important; border: 1px solid rgba(255,255,255,.22) !important; }
+
+/* ----- FEEDBACK AREAS ----- */
+.loading-spinner,
+.error-message{
+  display: grid; place-items: center;
+  height: 45vh;
+  color: var(--muted);
+}
+.error-message{ color: #ff6c8f; }
+
+/* ----- MISC ----- */
+.dashboard-root hr{ border-color: var(--edge); opacity: .6; }
+@keyframes fadeIn { from{opacity:0; transform:translateY(20px)} to{opacity:1; transform:none} }
+.challenge-card{ animation: fadeIn .3s ease-out; }
+
+/* Neon scrollbars */
+.dashboard-root ::-webkit-scrollbar{ width: 10px; }
+.dashboard-root ::-webkit-scrollbar-track{ background: #0b0f16; }
+.dashboard-root ::-webkit-scrollbar-thumb{ background: #263047; border-radius: 6px; }
+.dashboard-root ::-webkit-scrollbar-thumb:hover{ background: #31415f; }

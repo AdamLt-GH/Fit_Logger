@@ -1,5 +1,21 @@
+# Production requirements (for Linux server deployment)
+# This file includes uWSGI and PostgreSQL drivers which are Unix-only
 asgiref==3.9.1
-Django==5.2.5
+Django<5.2,>=2.2
 djangorestframework==3.16.1
 python-dotenv==1.1.1
 sqlparse==0.5.3
+django-cors-headers>=4.4.0
+djangorestframework-simplejwt==5.5.1
+celery>=5.5.0
+redis>=5.0.0
+django-redis>=6.0.0
+pytest>=8.0.0
+pytest-django>=4.5.2
+model-bakery>=1.7.0
+bleach
+requests>=2.31.0
+Pillow>=10.0.0
+uwsgi>=2.0.0
+psycopg2-binary>=2.9.0
+# Note: django-celery-beat 2.7.0 is NOT compatible with Django>=5.2
